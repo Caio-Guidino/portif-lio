@@ -1,41 +1,155 @@
-body {
-    font-family: Arial, sans-serif;
+/* Reset básico e configuração global */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    padding-top: 50px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 2.5em;
     text-align: center;
 }
 
-header {
-    background: #222;
-    color: white;
-    padding: 20px;
+nav {
+    margin-top: 10px;
+    text-align: center;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
-    background: #333;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+    display: inline-flex;
+    gap: 20px;
 }
 
 nav ul li {
-    padding: 15px;
+    display: inline;
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+    color: #04a4d0;
+}
+
+/* Seções */
 section {
-    padding: 50px;
+    padding: 80px 0;
 }
 
-footer {
-    background: #222;
+section h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+section p {
+    font-size: 1.1em;
+    text-align: center;
+    color: #555;
+}
+
+#servicos ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1em;
+}
+
+#servicos ul li {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+#contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contato input, #contato textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#contato textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+#contato button {
+    background-color: #04a4d0;
     color: white;
-    padding: 20px;
-    margin-top: 20px;
+    padding: 12px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contato button:hover {
+    background-color: #0286b1;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    #contato form {
+        width: 90%;
+    }
 }
