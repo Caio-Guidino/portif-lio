@@ -1,245 +1,203 @@
-/* Reset básico e configuração global */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Fonte personalizada */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f7fc;
+    background: #f4f7f6;
     color: #333;
+    line-height: 1.6;
 }
 
-/* Container */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Cabeçalho */
+/* Gradiente de fundo para o header */
 header {
-    background-color: #0073b1;
-    color: white;
-    padding: 20px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+    background: linear-gradient(135deg, #1c92d2, #f2fcfe);
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 2.5em;
-    text-align: center;
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+header nav {
     margin-top: 20px;
 }
 
-nav ul li {
+header nav ul {
     list-style: none;
+    display: flex;
+    justify-content: center;
 }
 
-nav ul li a {
+header nav ul li {
+    margin: 0 20px;
+}
+
+header nav ul li a {
     color: #fff;
+    font-weight: bold;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.1em;
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: #1abc9c;
+header nav ul li a:hover {
+    color: #1c92d2;
 }
 
-/* Perfil */
-#perfil {
-    padding: 100px 0;
-    background-color: #ffffff;
-    text-align: center;
+/* Efeito de fade-in para seções */
+section {
+    padding: 50px 20px;
+    margin: 50px 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.perfil-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Mostrar a seção quando visível */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.perfil-info img {
-    width: 150px;
-    border-radius: 50%;
-    border: 3px solid #0073b1;
+section h2 {
+    font-size: 2em;
     margin-bottom: 20px;
-}
-
-.perfil-info h2 {
-    font-size: 2.5em;
     color: #333;
 }
 
-.perfil-info p {
+section p {
     font-size: 1.1em;
+    line-height: 1.8;
     color: #555;
 }
 
-/* Experiência */
-#experiencia {
-    padding: 50px 0;
-    background-color: #f9f9f9;
-}
-
-.experiencia-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.experiencia-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.experiencia-card h3 {
-    font-size: 1.8em;
-    color: #0073b1;
-}
-
-.experiencia-card p {
-    color: #777;
-}
-
-/* Habilidades */
-#habilidades {
-    padding: 50px 0;
-}
-
-.habilidades-lista {
+/* Listas e cartões */
+ul {
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
+    padding: 0;
 }
 
-.habilidades-lista li {
-    background-color: #fff;
+ul li {
+    background: #f4f7f6;
     padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* Recomendações */
-#recomendacoes {
-    padding: 50px 0;
-    background-color: #f9f9f9;
+ul li:hover {
+    background: #1c92d2;
+    color: #fff;
+    transform: translateY(-5px);
 }
 
-.recomendacoes-cards {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.recomendacao-card {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    text-align: center;
-}
-
-.recomendacao-card p {
-    font-size: 1.2em;
-    color: #555;
-}
-
-.recomendacao-card i {
-    font-size: 1.2em;
-    color: #777;
-}
-
-/* Contato */
-#contato {
-    padding: 50px 0;
-    background-color: #ffffff;
-    text-align: center;
-}
-
-#contato form {
+/* Estilo do formulário */
+form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 500px;
-    margin: 0 auto;
 }
 
-#contato input, #contato textarea {
-    padding: 12px;
+form input, form textarea {
+    padding: 15px;
     font-size: 1.1em;
-    border: 1px solid #ddd;
     border-radius: 8px;
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease;
 }
 
-#contato button {
-    background-color: #0073b1;
-    color: white;
-    padding: 12px;
+form input:focus, form textarea:focus {
+    border-color: #1c92d2;
+    outline: none;
+}
+
+form button {
+    padding: 15px;
+    font-size: 1.2em;
+    color: #fff;
+    background: #1c92d2;
     border: none;
     border-radius: 8px;
-    font-size: 1.2em;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-#contato button:hover {
-    background-color: #005f8a;
+form button:hover {
+    background: #1161a2;
 }
 
-/* Rodapé */
+/* Estilo do rodapé */
 footer {
-    background-color: #0073b1;
-    color: white;
-    padding: 20px 0;
+    background: #1c92d2;
+    color: #fff;
     text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
 }
 
-footer .social-media {
-    margin-top: 10px;
+footer p {
+    font-size: 1em;
 }
 
-footer .social-media a {
-    color: white;
-    margin: 0 10px;
-    text-decoration: none;
+/* Estilo para os botões de adicionar habilidades/experiência */
+button {
+    background: #1161a2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0c4a72;
+}
+
+/* Adicionar estilo para feedback do formulário */
+.form-feedback {
+    background: #d4edda;
+    color: #155724;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 1.1em;
 }
 
-/* Responsividade */
+/* Responsividade para dispositivos menores */
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
-    nav ul {
+    header nav ul {
         flex-direction: column;
         gap: 15px;
     }
 
-    .experiencia-cards {
-        grid-template-columns: 1fr;
+    section {
+        padding: 30px 15px;
     }
 
-    .habilidades-lista {
-        grid-template-columns: 1fr;
+    form input, form textarea {
+        font-size: 1em;
     }
 
-    .recomendacoes-cards {
-        flex-direction: column;
+    form button {
+        font-size: 1.1em;
     }
 }
