@@ -15,42 +15,48 @@ body {
 
 /* Gradiente de fundo para o header */
 header {
-    background: linear-gradient(135deg, #1c92d2, #f2fcfe);
+    background: linear-gradient(135deg, #0066cc, #3399ff);
     color: #fff;
-    padding: 50px 0;
+    padding: 60px 20px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid #004b8d;
 }
 
+/* Título do Header */
 header h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-header nav {
-    margin-top: 20px;
-}
-
+/* Navegação */
 header nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
+    gap: 30px;
 }
 
 header nav ul li {
-    margin: 0 20px;
+    margin: 0;
 }
 
 header nav ul li a {
     color: #fff;
     font-weight: bold;
     text-decoration: none;
-    font-size: 1.1em;
-    transition: color 0.3s ease;
+    font-size: 1.2em;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #1c92d2;
+    background: #004b8d;
+    color: #fff;
+    transform: translateY(-3px);
 }
 
 /* Efeito de fade-in para seções */
@@ -63,6 +69,7 @@ section {
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    border-left: 5px solid #0066cc;
 }
 
 /* Mostrar a seção quando visível */
@@ -72,36 +79,40 @@ section.visible {
 }
 
 section h2 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin-bottom: 20px;
-    color: #333;
+    color: #004b8d;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-section p {
-    font-size: 1.1em;
-    line-height: 1.8;
-    color: #555;
-}
-
-/* Listas e cartões */
+/* Estilo para as listas e cards */
 ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 ul li {
-    background: #f4f7f6;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
+    background: #f0f4f8;
+    padding: 20px;
+    width: 280px;
+    border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease, transform 0.3s ease;
+    text-align: center;
+    border-left: 4px solid #0066cc;
 }
 
 ul li:hover {
-    background: #1c92d2;
+    background: #0066cc;
     color: #fff;
     transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilo do formulário */
@@ -109,6 +120,12 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 form input, form textarea {
@@ -120,7 +137,7 @@ form input, form textarea {
 }
 
 form input:focus, form textarea:focus {
-    border-color: #1c92d2;
+    border-color: #0066cc;
     outline: none;
 }
 
@@ -128,46 +145,50 @@ form button {
     padding: 15px;
     font-size: 1.2em;
     color: #fff;
-    background: #1c92d2;
+    background: #0066cc;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 form button:hover {
-    background: #1161a2;
+    background: #004b8d;
+    transform: translateY(-3px);
 }
 
 /* Estilo do rodapé */
 footer {
-    background: #1c92d2;
+    background: #0066cc;
     color: #fff;
     text-align: center;
     padding: 20px 0;
     margin-top: 50px;
+    border-top: 3px solid #004b8d;
 }
 
 footer p {
-    font-size: 1em;
+    font-size: 1.1em;
+    letter-spacing: 1px;
 }
 
 /* Estilo para os botões de adicionar habilidades/experiência */
 button {
-    background: #1161a2;
+    background: #004b8d;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background: #0c4a72;
+    background: #0066cc;
+    transform: translateY(-3px);
 }
 
-/* Adicionar estilo para feedback do formulário */
+/* Feedback de envio do formulário */
 .form-feedback {
     background: #d4edda;
     color: #155724;
@@ -176,6 +197,7 @@ button:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-size: 1.1em;
+    text-align: center;
 }
 
 /* Responsividade para dispositivos menores */
@@ -190,7 +212,7 @@ button:hover {
     }
 
     section {
-        padding: 30px 15px;
+        padding: 30px 20px;
     }
 
     form input, form textarea {
@@ -199,5 +221,9 @@ button:hover {
 
     form button {
         font-size: 1.1em;
+    }
+
+    footer p {
+        font-size: 1em;
     }
 }
