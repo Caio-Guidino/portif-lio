@@ -7,36 +7,43 @@
 
 /* Fonte personalizada */
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #f4f7f6;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
     color: #333;
     line-height: 1.6;
+    font-size: 16px;
 }
 
-/* Gradiente de fundo para o header */
+/* Estilo do header */
 header {
-    background: linear-gradient(135deg, #0066cc, #3399ff);
+    background: linear-gradient(135deg, #005f73, #0a9396);
     color: #fff;
-    padding: 60px 20px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    border-bottom: 3px solid #004b8d;
+    padding: 80px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid #001e20;
 }
 
-/* Título do Header */
 header h1 {
     font-size: 3.5em;
     margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
+    font-weight: 700;
 }
 
-/* Navegação */
+header p {
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
 header nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin-top: 20px;
 }
 
 header nav ul li {
@@ -45,31 +52,32 @@ header nav ul li {
 
 header nav ul li a {
     color: #fff;
-    font-weight: bold;
     text-decoration: none;
-    font-size: 1.2em;
-    padding: 8px 15px;
-    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 30px;
     transition: all 0.3s ease;
 }
 
 header nav ul li a:hover {
-    background: #004b8d;
+    background: #003d41;
     color: #fff;
     transform: translateY(-3px);
 }
 
 /* Efeito de fade-in para seções */
 section {
-    padding: 50px 20px;
-    margin: 50px 0;
+    padding: 60px 20px;
+    margin: 40px auto;
     background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
-    border-left: 5px solid #0066cc;
+    max-width: 1200px;
+    border-left: 5px solid #005f73;
 }
 
 /* Mostrar a seção quando visível */
@@ -79,125 +87,105 @@ section.visible {
 }
 
 section h2 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     margin-bottom: 20px;
-    color: #004b8d;
+    color: #005f73;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 /* Estilo para as listas e cards */
 ul {
     list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
     justify-content: center;
 }
 
 ul li {
-    background: #f0f4f8;
-    padding: 20px;
-    width: 280px;
+    background: #f9fafb;
+    padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border-left: 4px solid #0066cc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 ul li:hover {
-    background: #0066cc;
-    color: #fff;
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+ul li h3 {
+    font-size: 1.8em;
+    color: #005f73;
+    margin-bottom: 10px;
+}
+
+ul li p {
+    font-size: 1.1em;
+    color: #333;
 }
 
 /* Estilo do formulário */
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-form input, form textarea {
+form input,
+form textarea {
     padding: 15px;
     font-size: 1.1em;
-    border-radius: 8px;
     border: 2px solid #ddd;
+    border-radius: 8px;
     transition: border-color 0.3s ease;
 }
 
-form input:focus, form textarea:focus {
-    border-color: #0066cc;
+form input:focus,
+form textarea:focus {
+    border-color: #005f73;
     outline: none;
 }
 
 form button {
     padding: 15px;
     font-size: 1.2em;
+    background: #005f73;
     color: #fff;
-    background: #0066cc;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease;
 }
 
 form button:hover {
-    background: #004b8d;
-    transform: translateY(-3px);
+    background: #003d41;
 }
 
 /* Estilo do rodapé */
 footer {
-    background: #0066cc;
+    background: #005f73;
     color: #fff;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
     margin-top: 50px;
-    border-top: 3px solid #004b8d;
+    border-top: 4px solid #003d41;
 }
 
 footer p {
     font-size: 1.1em;
-    letter-spacing: 1px;
-}
-
-/* Estilo para os botões de adicionar habilidades/experiência */
-button {
-    background: #004b8d;
-    color: #fff;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-
-button:hover {
-    background: #0066cc;
-    transform: translateY(-3px);
-}
-
-/* Feedback de envio do formulário */
-.form-feedback {
-    background: #d4edda;
-    color: #155724;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 1.1em;
-    text-align: center;
+    font-weight: 600;
 }
 
 /* Responsividade para dispositivos menores */
@@ -208,11 +196,15 @@ button:hover {
 
     header nav ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
     }
 
     section {
-        padding: 30px 20px;
+        padding: 40px 20px;
+    }
+
+    form {
+        padding: 30px;
     }
 
     form input, form textarea {
@@ -221,9 +213,5 @@ button:hover {
 
     form button {
         font-size: 1.1em;
-    }
-
-    footer p {
-        font-size: 1em;
     }
 }
