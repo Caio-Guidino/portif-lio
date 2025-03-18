@@ -1,48 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Caio Guidino, especialista em suporte técnico, redes, cibersegurança e cloud computing.">
-    <title>Caio Guidino - Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Icone do site -->
+    <meta name="description" content="Portfólio de TI - Soluções em redes, segurança, cloud computing e desenvolvimento web.">
+    <title>Portfólio - Serviços de TI</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Caio Guidino da Silva</h1>
-            <p>Especialista em Suporte Técnico, Redes e Cibersegurança</p>
+            <h1>Meu Portfólio de TI</h1>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#competencias">Competências</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </div>
-    </nav>
 
     <main>
         <section id="sobre">
             <div class="container">
                 <h2>Sobre Mim</h2>
-                <p>Sou um profissional de tecnologia especializado em redes, cibersegurança e cloud computing, com foco em soluções de infraestrutura e suporte técnico.</p>
+                <p>Sou um profissional de TI com experiência em redes, cloud computing e desenvolvimento web. Ofereço soluções personalizadas para otimizar infraestrutura e segurança digital.</p>
             </div>
         </section>
 
-        <section id="competencias">
+        <section id="servicos">
             <div class="container">
-                <h2>Minhas Competências</h2>
-                <ul>
-                    <li>Redes de Computadores</li>
-                    <li>Cibersegurança e Segurança em Redes</li>
-                    <li>Suporte Técnico ao Usuário</li>
-                    <li>Infraestrutura e Deploy de Redes</li>
-                    <li>Cloud Computing</li>
+                <h2>Serviços</h2>
+                <ul id="lista-servicos">
+                    <!-- Os serviços serão adicionados aqui dinamicamente -->
                 </ul>
             </div>
         </section>
@@ -50,17 +41,22 @@
         <section id="contato">
             <div class="container">
                 <h2>Contato</h2>
-                <p>Email: <a href="mailto:guidinocaio16@gmail.com">guidinocaio16@gmail.com</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/caio-guidino-847212239" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/caio-guidino-847212239</a></p>
+                <form id="form-contato">
+                    <input type="text" id="nome" placeholder="Seu nome" required>
+                    <input type="email" id="email" placeholder="Seu e-mail" required>
+                    <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Caio Guidino - Todos os direitos reservados.</p>
+            <p>&copy; 2025 Meu Portfólio de TI. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
