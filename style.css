@@ -1,217 +1,165 @@
-/* Reset básico */
-* {
+/* Importando fonte */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Fonte personalizada */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
-    line-height: 1.6;
-    font-size: 16px;
+/* Container padrão */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-/* Estilo do header */
+/* Cabeçalho */
 header {
-    background: linear-gradient(135deg, #005f73, #0a9396);
-    color: #fff;
+    background-color: #0056b3;
+    color: white;
+    padding: 20px 0;
     text-align: center;
-    padding: 80px 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border-bottom: 4px solid #001e20;
 }
 
 header h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-weight: 700;
-}
-
-header p {
-    font-size: 1.2em;
-    font-weight: 400;
-    margin-top: 10px;
-}
-
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-}
-
-header nav ul li {
     margin: 0;
 }
 
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1em;
-    font-weight: 600;
-    padding: 12px 20px;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-}
-
-header nav ul li a:hover {
-    background: #003d41;
-    color: #fff;
-    transform: translateY(-3px);
-}
-
-/* Efeito de fade-in para seções */
-section {
-    padding: 60px 20px;
-    margin: 40px auto;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    max-width: 1200px;
-    border-left: 5px solid #005f73;
-}
-
-/* Mostrar a seção quando visível */
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-section h2 {
-    font-size: 2.8em;
-    margin-bottom: 20px;
-    color: #005f73;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
-/* Estilo para as listas e cards */
-ul {
+nav ul {
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Seções */
+section {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    color: #0056b3;
+    text-align: center;
+}
+
+/* Estilo para a experiência */
+.experiencia-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
 }
 
-ul li {
-    background: #f9fafb;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+.experiencia-card {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-ul li:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+.experiencia-card h3 {
+    color: #007bff;
 }
 
-ul li h3 {
-    font-size: 1.8em;
-    color: #005f73;
-    margin-bottom: 10px;
+/* Habilidades */
+.habilidades-lista {
+    list-style: none;
+    padding: 0;
+    text-align: center;
 }
 
-ul li p {
-    font-size: 1.1em;
-    color: #333;
+.habilidades-lista li {
+    display: inline-block;
+    background: #007bff;
+    color: white;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
-/* Estilo do formulário */
+/* Recomendações */
+.recomendacoes-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.recomendacao-card {
+    background: #ffeb3b;
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    font-style: italic;
+}
+
+/* Formulário de Contato */
 form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    background: #fff;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    gap: 10px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
-form input,
-form textarea {
-    padding: 15px;
-    font-size: 1.1em;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    transition: border-color 0.3s ease;
-}
-
-form input:focus,
-form textarea:focus {
-    border-color: #005f73;
-    outline: none;
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 form button {
-    padding: 15px;
-    font-size: 1.2em;
-    background: #005f73;
-    color: #fff;
+    background: #28a745;
+    color: white;
     border: none;
-    border-radius: 8px;
+    padding: 10px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    font-size: 16px;
+    border-radius: 5px;
 }
 
 form button:hover {
-    background: #003d41;
+    background: #218838;
 }
 
-/* Estilo do rodapé */
+/* Rodapé */
 footer {
-    background: #005f73;
-    color: #fff;
+    background: #333;
+    color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-    border-top: 4px solid #003d41;
+    padding: 10px;
 }
 
-footer p {
-    font-size: 1.1em;
-    font-weight: 600;
+.social-media a {
+    color: #ffeb3b;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
 }
 
-/* Responsividade para dispositivos menores */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5em;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    section {
-        padding: 40px 20px;
-    }
-
-    form {
-        padding: 30px;
-    }
-
-    form input, form textarea {
-        font-size: 1em;
-    }
-
-    form button {
-        font-size: 1.1em;
-    }
+.social-media a:hover {
+    text-decoration: underline;
 }
