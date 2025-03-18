@@ -6,6 +6,7 @@
     <meta name="description" content="Portfólio de TI - Soluções em redes, segurança, cloud computing e desenvolvimento web.">
     <title>Portfólio - Profissional de TI</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -26,29 +27,36 @@
         <!-- Sobre -->
         <section id="sobre">
             <div class="container">
-                <h2>Sobre Mim</h2>
-                <p>Sou um profissional de TI com experiência em redes, cloud computing, cibersegurança e desenvolvimento web. Tenho paixão por tecnologia e estou sempre buscando soluções inovadoras para otimizar processos e proteger dados. </p>
+                <h2 class="section-title">Sobre Mim</h2>
+                <p class="descricao">Sou um profissional de TI com experiência em redes, cloud computing, cibersegurança e desenvolvimento web. Tenho paixão por tecnologia e estou sempre buscando soluções inovadoras para otimizar processos e proteger dados.</p>
+                <div class="sobre-image">
+                    <img src="https://via.placeholder.com/400" alt="Caio Guidino" />
+                </div>
             </div>
         </section>
 
         <!-- Serviços -->
         <section id="servicos">
             <div class="container">
-                <h2>Serviços</h2>
+                <h2 class="section-title">Serviços</h2>
                 <div class="servicos-lista">
                     <div class="servico">
+                        <i class="fas fa-network-wired"></i>
                         <h3>Consultoria em Redes</h3>
                         <p>Planejamento e implementação de redes seguras e escaláveis.</p>
                     </div>
                     <div class="servico">
+                        <i class="fas fa-shield-alt"></i>
                         <h3>Cibersegurança</h3>
                         <p>Proteção contra ataques cibernéticos e soluções de segurança digital.</p>
                     </div>
                     <div class="servico">
+                        <i class="fas fa-cloud"></i>
                         <h3>Cloud Computing</h3>
                         <p>Soluções de nuvem para otimizar recursos e aumentar a segurança.</p>
                     </div>
                     <div class="servico">
+                        <i class="fas fa-laptop-code"></i>
                         <h3>Desenvolvimento Web</h3>
                         <p>Criação de sites modernos, responsivos e otimizados para SEO.</p>
                     </div>
@@ -59,8 +67,8 @@
         <!-- Portfólio -->
         <section id="portfolio">
             <div class="container">
-                <h2>Portfólio</h2>
-                <p>Veja alguns dos projetos que desenvolvi ao longo da minha carreira.</p>
+                <h2 class="section-title">Portfólio</h2>
+                <p class="descricao">Veja alguns dos projetos que desenvolvi ao longo da minha carreira.</p>
                 <div class="galeria">
                     <div class="projeto">
                         <img src="https://via.placeholder.com/300x200" alt="Projeto 1">
@@ -81,7 +89,7 @@
         <!-- Contato -->
         <section id="contato">
             <div class="container">
-                <h2>Contato</h2>
+                <h2 class="section-title">Contato</h2>
                 <form id="form-contato">
                     <input type="text" id="nome" placeholder="Seu nome" required>
                     <input type="email" id="email" placeholder="Seu e-mail" required>
@@ -95,6 +103,10 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Caio Guidino. Todos os direitos reservados.</p>
+            <div class="social-media">
+                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+            </div>
         </div>
     </footer>
 
