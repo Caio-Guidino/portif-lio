@@ -1,13 +1,105 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Caio Guidino - Profissional de TI">
-    <title>Portfólio de Caio Guidino</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio of Caio Guidino - IT Professional">
+    <title>Caio Guidino Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Adicionando estilo para o menu */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: flex-end; /* Mover o menu para a direita */
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            color: #fff;
+            margin-right: auto; /* Mover o título para a esquerda */
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Scroll da página */
+        main {
+            margin-top: 80px; /* Deixa o conteúdo da página abaixo do menu fixo */
+            padding: 20px;
+        }
+
+        /* Estilos para as seções */
+        .skills-container, .recommendations-container {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .skills-list, .recommendations-cards {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-list li, .recommendation-card {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        /* Animação para fade-in */
+        section.hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -15,102 +107,123 @@
             <h1>Caio Guidino</h1>
             <nav>
                 <ul>
-                    <li><a href="#perfil">Perfil</a></li>
-                    <li><a href="#experiencia">Experiência</a></li>
-                    <li><a href="#habilidades">Habilidades</a></li>
-                    <li><a href="#recomendacoes">Recomendações</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#recommendations">Recommendations</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <!-- Perfil -->
-        <section id="perfil">
-            <div class="container perfil-container">
-                <div class="perfil-info">
-                    <img src="https://via.placeholder.com/150" alt="Caio Guidino">
-                    <h2>Caio Guidino</h2>
-                    <p>Profissional de TI especializado em redes, segurança, e desenvolvimento web.</p>
+        <!-- Profile -->
+        <section id="profile" class="hidden">
+            <div class="container profile-container">
+                <div class="profile-info">
+                    <h2>Profile</h2>
+                    <p>I am Caio Guidino da Silva, an IT professional based in São Paulo, Brazil. I specialize in end-user support, structured cabling, and Cisco device configurations. I am passionate about solving technical problems and helping businesses optimize their IT infrastructure.
+
+                        I have hands-on experience working with a variety of network environments and I am always looking to expand my knowledge. My focus is on providing quality technical support and ensuring that networks and systems operate smoothly.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Experiência -->
-        <section id="experiencia">
+        <!-- Experience -->
+        <section id="experience" class="hidden">
             <div class="container">
-                <h2 class="section-title">Experiência</h2>
-                <div class="experiencia-cards">
-                    <div class="experiencia-card">
-                        <h3>Consultor de Redes</h3>
-                        <p><i class="fas fa-calendar-day"></i> Jan 2022 - Presente</p>
-                        <p>Consultoria em redes corporativas, design e implementação de soluções seguras.</p>
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-cards">
+                    <div class="experience-card">
+                        <h3>Network Consultant</h3>
+                        <p><i class="fas fa-calendar-day"></i> Jan 2022 - Present</p>
+                        <p>Consulting on corporate networks, designing and implementing secure solutions.</p>
                     </div>
-                    <div class="experiencia-card">
-                        <h3>Desenvolvedor Web</h3>
-                        <p><i class="fas fa-calendar-day"></i> Jun 2020 - Dez 2021</p>
-                        <p>Desenvolvimento de websites responsivos, otimização de SEO e integração de APIs.</p>
+                    <div class="experience-card">
+                        <h3>Web Developer</h3>
+                        <p><i class="fas fa-calendar-day"></i> Jun 2020 - Dec 2021</p>
+                        <p>Development of responsive websites, SEO optimization, and API integration.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Habilidades -->
-        <section id="habilidades">
-            <div class="container">
-                <h2 class="section-title">Habilidades</h2>
-                <ul class="habilidades-lista">
-                    <li>Redes de Computadores</li>
-                    <li>Cibersegurança</li>
-                    <li>Desenvolvimento Web</li>
-                    <li>Cloud Computing</li>
-                    <li>Suporte Técnico</li>
+        <!-- Skills -->
+        <section id="skills" class="hidden">
+            <div class="container skills-container">
+                <h2 class="section-title">Skills</h2>
+                <ul class="skills-list">
+                    <li>Computer Networks</li>
+                    <li>Cybersecurity</li>
+                    <li>Technical Support</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Recomendações -->
-        <section id="recomendacoes">
-            <div class="container">
-                <h2 class="section-title">Recomendações</h2>
-                <div class="recomendacoes-cards">
-                    <div class="recomendacao-card">
-                        <p>"Caio é um excelente profissional, sempre focado em entregar soluções inovadoras!"</p>
-                        <p><i>- João Silva, Gerente de TI</i></p>
+        <!-- Recommendations -->
+        <section id="recommendations" class="hidden">
+            <div class="container recommendations-container">
+                <h2 class="section-title">Recommendations</h2>
+                <div class="recommendations-cards">
+                    <div class="recommendation-card">
+                        <p>"Caio is an excellent professional, always focused on delivering innovative solutions!"</p>
+                        <p><i>- João Silva, IT Manager</i></p>
                     </div>
-                    <div class="recomendacao-card">
-                        <p>"Trabalhei com Caio em projetos de segurança cibernética e ele sempre entrega com qualidade."</p>
-                        <p><i>- Maria Souza, Analista de Segurança</i></p>
+                    <div class="recommendation-card">
+                        <p>"I worked with Caio on cybersecurity projects, and he always delivers with quality."</p>
+                        <p><i>- Maria Souza, Security Analyst</i></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contato -->
-        <section id="contato">
+        <!-- Contact -->
+        <section id="contact" class="hidden">
             <div class="container">
-                <h2 class="section-title">Contato</h2>
-                <form id="form-contato">
-                    <input type="text" id="nome" placeholder="Seu nome" required>
-                    <input type="email" id="email" placeholder="Seu e-mail" required>
-                    <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
+                <h2 class="section-title">Contact</h2>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:guidinocaio16@gmail.com">guidinocaio16@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> Phone - Whatsapp: <a href="tel:+5511977323729">(11) 97732-3729</a></p>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Caio Guidino - Todos os direitos reservados.</p>
+            <p>&copy; 2025 Caio Guidino - All rights reserved.</p>
             <div class="social-media">
-                <a href="https://www.linkedin.com/in/caio-guidino" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.linkedin.com/in/caio-guidino-847212239/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 <a href="https://github.com/caio-guidino" target="_blank"><i class="fab fa-github"></i> GitHub</a>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script>
+        // Função para adicionar animação nas seções
+        function aplicarAnimacaoSeccao() {
+            const sections = document.querySelectorAll("section");
+
+            const options = {
+                threshold: 0.2
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    entry.target.classList.toggle("visible", entry.isIntersecting);
+                });
+            }, options);
+
+            sections.forEach(section => observer.observe(section));
+        }
+
+        // Função para inicializar tudo
+        function init() {
+            aplicarAnimacaoSeccao();
+        }
+
+        // Iniciar o script
+        init();
+    </script>
 </body>
 </html>
