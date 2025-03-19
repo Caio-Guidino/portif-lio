@@ -1,46 +1,53 @@
-// Animação para mostrar as seções quando o usuário rola a página
-const sections = document.querySelectorAll("section");
+// Função para adicionar a animação nas seções
+function aplicarAnimacaoSeccao() {
+    const sections = document.querySelectorAll("section");
 
-const options = {
-    threshold: 0.2
-};
+    const options = {
+        threshold: 0.2
+    };
 
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-        } else {
-            entry.target.classList.remove("visible");
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            entry.target.classList.toggle("visible", entry.isIntersecting);
+        });
+    }, options);
+
+    sections.forEach(section => observer.observe(section));
+}
+
+// Função de validação de formulário com feedback em tempo real
+function validarFormulario() {
+    const form = document.getElementById('form-contato');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const nome = form['nome'].value;
+        const email = form['email'].value;
+        const mensagem = form['mensagem'].value;
+
+        if (!nome || !email || !mensagem) {
+            alert('Por favor, preencha todos os campos.');
+            return;
         }
+
+        if (!validarEmail(email)) {
+            alert('Por favor, insira um e-mail válido.');
+            return;
+        }
+
+        exibirFeedback(nome);
+        form.reset();
     });
-}, options);
+}
 
-sections.forEach(section => {
-    observer.observe(section);
-});
-
-// Validação de formulário com feedback em tempo real
-document.getElementById('form-contato').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
-    const mensagem = document.getElementById('mensagem').value;
-
-    // Verificação simples de preenchimento
-    if (!nome || !email || !mensagem) {
-        alert('Por favor, preencha todos os campos.');
-        return;
-    }
-
-    // Validação de email
+// Função de validação do email
+function validarEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Por favor, insira um e-mail válido.');
-        return;
-    }
+    return emailRegex.test(email);
+}
 
-    // Simulação de envio do formulário com feedback
+// Função para exibir feedback após o envio do formulário
+function exibirFeedback(nome) {
     const formFeedback = document.createElement('div');
     formFeedback.classList.add('form-feedback');
     formFeedback.innerHTML = `
@@ -49,66 +56,75 @@ document.getElementById('form-contato').addEventListener('submit', function(even
     `;
     document.querySelector('#contato').appendChild(formFeedback);
 
-    // Limpar o formulário
-    document.getElementById('form-contato').reset();
-
     setTimeout(() => {
         formFeedback.remove();
     }, 5000);
-});
+}
 
-// Adicionar experiência dinâmica
-const addExperienciaBtn = document.createElement("button");
-addExperienciaBtn.textContent = "Adicionar Experiência";
-document.querySelector('#experiencia').appendChild(addExperienciaBtn);
+// Função para adicionar nova experiência
+function adicionarExperiencia() {
+    const btnAdicionar = document.createElement("button");
+    btnAdicionar.textContent = "Adicionar Experiência";
+    document.querySelector('#experiencia').appendChild(btnAdicionar);
 
-addExperienciaBtn.addEventListener('click', function() {
-    const experienciaContainer = document.querySelector('.experiencia-cards');
-    
-    const novaExperiencia = document.createElement('div');
-    novaExperiencia.classList.add('experiencia-card');
-    
-    const novaExperienciaHTML = `
-        <h3>Nova Experiência</h3>
-        <p><i class="fas fa-calendar-day"></i> Ago 2023 - Presente</p>
-        <p>Descrição da experiência aqui.</p>
+    btnAdicionar.addEventListener('click', () => {
+        const experienciaContainer = document.querySelector('.experiencia-cards');
+        const novaExperiencia = document.createElement('div');
+        novaExperiencia.classList.add('experiencia-card');
+        novaExperiencia.innerHTML = `
+            <h3>Nova Experiência</h3>
+            <p><i class="fas fa-calendar-day"></i> Ago 2023 - Presente</p>
+            <p>Descrição da experiência aqui.</p>
+        `;
+        experienciaContainer.appendChild(novaExperiencia);
+    });
+}
+
+// Função para adicionar habilidades dinamicamente
+function adicionarHabilidade() {
+    const btnAdicionar = document.createElement("button");
+    btnAdicionar.textContent = "Adicionar Habilidade";
+    document.querySelector('#habilidades').appendChild(btnAdicionar);
+
+    btnAdicionar.addEventListener('click', () => {
+        const habilidadeInput = prompt('Digite a nova habilidade:');
+        if (habilidadeInput && habilidadeInput.trim() !== "") {
+            const novaHabilidade = document.createElement('li');
+            novaHabilidade.textContent = habilidadeInput;
+            document.querySelector('.habilidades-lista').appendChild(novaHabilidade);
+        }
+    });
+}
+
+// Função para aplicar animações de fade-in nas seções
+function aplicarAnimacoesFadeIn() {
+    const style = document.createElement('style');
+    style.textContent = `
+        section.hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            will-change: opacity, transform;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     `;
-    
-    novaExperiencia.innerHTML = novaExperienciaHTML;
-    experienciaContainer.appendChild(novaExperiencia);
-});
+    document.head.appendChild(style);
 
-// Adicionar habilidades dinamicamente
-const addHabilidadeBtn = document.createElement("button");
-addHabilidadeBtn.textContent = "Adicionar Habilidade";
-document.querySelector('#habilidades').appendChild(addHabilidadeBtn);
+    // Inicializa a animação das seções
+    document.querySelectorAll('section').forEach(section => section.classList.add('hidden'));
+}
 
-addHabilidadeBtn.addEventListener('click', function() {
-    const habilidadeInput = prompt('Digite a nova habilidade:');
-    if (habilidadeInput && habilidadeInput.trim() !== "") {
-        const novaHabilidade = document.createElement('li');
-        novaHabilidade.textContent = habilidadeInput;
-        document.querySelector('.habilidades-lista').appendChild(novaHabilidade);
-    }
-});
+// Função para inicializar tudo
+function init() {
+    aplicarAnimacaoSeccao();
+    validarFormulario();
+    adicionarExperiencia();
+    adicionarHabilidade();
+    aplicarAnimacoesFadeIn();
+}
 
-// Efeito de animação para as seções (já configurado com IntersectionObserver)
-// Adicionamos a classe 'visible' quando a seção entra na tela
-document.querySelectorAll('section').forEach(section => {
-    section.classList.add('hidden');
-});
-
-// Aplicar animações de fade-in nas seções
-const style = document.createElement('style');
-style.textContent = `
-    section.hidden {
-        opacity: 0;
-        transform: translateY(50px);
-        transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    }
-    section.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`;
-document.head.appendChild(style);
+// Iniciar o script
+init();
