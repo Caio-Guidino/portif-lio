@@ -1,4 +1,4 @@
-/* Importando fonte */
+/* Estilo geral */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 
-/* Container padrão */
+/* Container */
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -20,221 +20,84 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    position: relative;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 24px;
+/* Ícone do menu hambúrguer */
+.menu-toggle {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none; /* Só aparece no mobile */
 }
 
-/* Menu de navegação responsivo */
+.menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.3s;
+}
+
+/* Menu padrão */
+nav {
+    display: flex;
+    justify-content: center;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
-    text-align: center;
+    display: flex;
+    gap: 15px;
 }
 
 nav ul li {
     display: inline-block;
-    margin: 10px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 10px 15px;
+    display: inline-block;
 }
 
 nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Seções */
-section {
-    background: white;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.section-title {
-    color: #0b0c0e;
-    text-align: center;
-}
-
-/* Estilo para a experiência */
-.experiencia-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.experiencia-card {
-    background: #e3f2fd;
-    padding: 15px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-}
-
-.experiencia-card h3 {
-    color: #007bff;
-}
-
-/* Habilidades */
-.habilidades-lista {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-.habilidades-lista li {
-    display: inline-block;
-    background: #007bff;
-    color: white;
-    padding: 8px 15px;
-    margin: 5px;
-    border-radius: 5px;
-}
-
-/* Recomendações */
-.recomendacoes-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.recomendacao-card {
-    background: #ffeb3b;
-    padding: 15px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    font-style: italic;
-}
-
-/* Formulário de Contato */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    background: #28a745;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-form button:hover {
-    background: #218838;
-}
-
-/* Rodapé */
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
-
-.social-media a {
-    color: #ffeb3b;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 18px;
-}
-
-.social-media a:hover {
-    text-decoration: underline;
-}
-
-/* Responsividade */
+/* Menu mobile (oculto por padrão) */
 @media screen and (max-width: 768px) {
-    .container {
-        width: 90%;
-        padding: 10px;
-    }
-
-    header h1 {
-        font-size: 20px;
-    }
-
-    nav ul li {
+    .menu-toggle {
         display: block;
-        margin: 10px 0;
     }
 
-    .experiencia-cards,
-    .recomendacoes-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .experiencia-card,
-    .recomendacao-card {
-        width: 90%;
-    }
-
-    .habilidades-lista li {
-        display: block;
-        width: 80%;
-        margin: 5px auto;
-    }
-
-    form {
-        width: 90%;
-    }
-
-    footer {
-        font-size: 14px;
-        padding: 15px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    header h1 {
-        font-size: 18px;
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #111416;
+        text-align: center;
     }
 
     nav ul {
-        padding: 0;
+        flex-direction: column;
+        gap: 0;
     }
 
     nav ul li {
         display: block;
-        text-align: center;
-        margin: 5px 0;
+        padding: 15px;
     }
 
-    .experiencia-card,
-    .recomendacao-card {
-        max-width: 100%;
-    }
-
-    .habilidades-lista li {
-        width: 100%;
-    }
-
-    form {
-        width: 100%;
+    /* Menu ativo */
+    nav.active {
+        display: block;
     }
 }
