@@ -18,22 +18,25 @@ body {
 header {
     background-color: #111416;
     color: white;
-    padding: 20px 0;
+    padding: 20px 10px;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
+    font-size: 1.8em;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    margin: 5px 10px;
 }
 
 nav ul li a {
@@ -95,6 +98,7 @@ section {
     padding: 8px 15px;
     margin: 5px;
     border-radius: 5px;
+    font-size: 14px;
 }
 
 /* Recomendações */
@@ -129,6 +133,7 @@ form input, form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 16px;
 }
 
 form button {
@@ -162,4 +167,32 @@ footer {
 
 .social-media a:hover {
     text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    .experiencia-cards, .recomendacoes-cards {
+        flex-direction: column;
+    }
+    
+    .habilidades-lista li {
+        display: block;
+        width: 80%;
+        margin: 5px auto;
+    }
 }
