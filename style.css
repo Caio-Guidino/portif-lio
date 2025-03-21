@@ -18,25 +18,25 @@ body {
 header {
     background-color: #111416;
     color: white;
-    padding: 20px 10px;
+    padding: 20px;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8em;
+    font-size: 24px;
 }
 
+/* Menu de navegação responsivo */
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    text-align: center;
 }
 
 nav ul li {
-    margin: 5px 10px;
+    display: inline-block;
+    margin: 10px;
 }
 
 nav ul li a {
@@ -98,7 +98,6 @@ section {
     padding: 8px 15px;
     margin: 5px;
     border-radius: 5px;
-    font-size: 14px;
 }
 
 /* Recomendações */
@@ -133,7 +132,6 @@ form input, form textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 16px;
 }
 
 form button {
@@ -170,29 +168,73 @@ footer {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .container {
-        width: 100%;
+        width: 90%;
         padding: 10px;
     }
-    
-    nav ul {
-        flex-direction: column;
-        text-align: center;
+
+    header h1 {
+        font-size: 20px;
     }
 
     nav ul li {
         display: block;
         margin: 10px 0;
     }
-    
-    .experiencia-cards, .recomendacoes-cards {
+
+    .experiencia-cards,
+    .recomendacoes-cards {
         flex-direction: column;
+        align-items: center;
     }
-    
+
+    .experiencia-card,
+    .recomendacao-card {
+        width: 90%;
+    }
+
     .habilidades-lista li {
         display: block;
         width: 80%;
         margin: 5px auto;
+    }
+
+    form {
+        width: 90%;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    nav ul {
+        padding: 0;
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .experiencia-card,
+    .recomendacao-card {
+        max-width: 100%;
+    }
+
+    .habilidades-lista li {
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
     }
 }
