@@ -50,10 +50,10 @@ function validarEmail(email) {
 function exibirFeedback(nome) {
     const formFeedback = document.createElement('div');
     formFeedback.classList.add('form-feedback');
-    formFeedback.innerHTML = `
+    formFeedback.innerHTML = 
         <p><strong>Obrigado, ${nome}!</strong></p>
         <p>Recebemos sua mensagem. Em breve entraremos em contato.</p>
-    `;
+    ;
     document.querySelector('#contato').appendChild(formFeedback);
 
     setTimeout(() => {
@@ -71,11 +71,11 @@ function adicionarExperiencia() {
         const experienciaContainer = document.querySelector('.experiencia-cards');
         const novaExperiencia = document.createElement('div');
         novaExperiencia.classList.add('experiencia-card');
-        novaExperiencia.innerHTML = `
+        novaExperiencia.innerHTML = 
             <h3>Nova Experiência</h3>
             <p><i class="fas fa-calendar-day"></i> Ago 2023 - Presente</p>
             <p>Descrição da experiência aqui.</p>
-        `;
+        ;
         experienciaContainer.appendChild(novaExperiencia);
     });
 }
@@ -99,7 +99,7 @@ function adicionarHabilidade() {
 // Função para aplicar animações de fade-in nas seções
 function aplicarAnimacoesFadeIn() {
     const style = document.createElement('style');
-    style.textContent = `
+    style.textContent = 
         section.hidden {
             opacity: 0;
             transform: translateY(50px);
@@ -110,7 +110,7 @@ function aplicarAnimacoesFadeIn() {
             opacity: 1;
             transform: translateY(0);
         }
-    `;
+    ;
     document.head.appendChild(style);
 
     // Inicializa a animação das seções
@@ -138,4 +138,4 @@ function init() {
 }
 
 // Iniciar o script
-init();
+init();  
