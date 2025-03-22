@@ -117,6 +117,17 @@ function aplicarAnimacoesFadeIn() {
     document.querySelectorAll('section').forEach(section => section.classList.add('hidden'));
 }
 
+// Função para alternar o menu hambúrguer
+function toggleMenu() {
+    const menu = document.getElementById('menu');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    menu.classList.toggle('active');
+    hamburgerIcon.classList.toggle('active');
+}
+
+// Adicionando o evento de clique no ícone do menu
+document.getElementById('hamburger-icon').addEventListener('click', toggleMenu);
+
 // Função para inicializar tudo
 function init() {
     aplicarAnimacaoSeccao();
