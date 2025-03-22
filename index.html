@@ -9,13 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Adicionando estilo para o menu */
+        /* Estilo para o corpo e a fonte */
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
             margin: 0;
             padding: 0;
         }
 
+        /* Estilo para o cabeçalho */
         header {
             background-color: #333;
             padding: 10px 0;
@@ -28,14 +31,28 @@
 
         header .container {
             display: flex;
-            justify-content: flex-end; /* Mover o menu para a direita */
+            justify-content: space-between; /* Título à esquerda e menu à direita */
             align-items: center;
             padding: 0 20px;
         }
 
         header h1 {
             color: #fff;
-            margin-right: auto; /* Mover o título para a esquerda */
+        }
+
+        /* Menu Hambúrguer */
+        .hamburger-icon {
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .hamburger-icon .bar {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: transform 0.3s ease;
         }
 
         header nav ul {
@@ -53,6 +70,45 @@
             color: #fff;
             text-decoration: none;
             font-weight: 500;
+        }
+
+        /* Menu Responsivo */
+        @media (max-width: 768px) {
+            .hamburger-icon {
+                display: block;
+            }
+
+            header nav {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #333;
+                width: 100%;
+                height: 100vh;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                justify-content: center;
+                align-items: center;
+            }
+
+            header nav.active {
+                transform: translateX(0);
+            }
+
+            header nav ul {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            header nav ul li {
+                margin-left: 0;
+            }
+
+            header nav ul li a {
+                font-size: 24px;
+                color: #fff;
+            }
         }
 
         /* Scroll da página */
@@ -99,18 +155,72 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Formulário de Contato */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        form button:hover {
+            background: #218838;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .social-media a {
+            color: #ffeb3b;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        .social-media a:hover {
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Caio Guidino</h1>
-            <nav>
+            <div class="hamburger-icon" id="hamburger-icon">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav id="menu">
                 <ul>
                     <li><a href="#profile">Profile</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <!--li><a href="#recommendations">Recommendations</a></li-->
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -161,23 +271,6 @@
             </div>
         </section>
 
-        <!-- Recommendations -->
-        <!--section id="recommendations" class="hidden">
-            <div class="container recommendations-container">
-                <h2 class="section-title">Recommendations</h2>
-                <div class="recommendations-cards">
-                    <div class="recommendation-card">
-                        <p>"Caio is an excellent professional, always focused on delivering innovative solutions!"</p>
-                        <p><i>- Luciano, IT Manager</i></p>
-                    </div>
-                    <div class="recommendation-card">
-                        <p>"I worked with Caio on cybersecurity projects, and he always delivers with quality."</p>
-                        <p><i>- Maria Souza, Security Analyst</i></p>
-                    </div>
-                </div>
-            </div>
-        </section -->
-
         <!-- Contact -->
         <section id="contact" class="hidden">
             <div class="container">
@@ -200,6 +293,17 @@
 
     <!-- JavaScript -->
     <script>
+        // Função para alternar o menu hambúrguer
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            menu.classList.toggle('active');
+            hamburgerIcon.classList.toggle('active');
+        }
+
+        // Adicionando o evento de clique no ícone do menu
+        document.getElementById('hamburger-icon').addEventListener('click', toggleMenu);
+
         // Função para adicionar animação nas seções
         function aplicarAnimacaoSeccao() {
             const sections = document.querySelectorAll("section");
