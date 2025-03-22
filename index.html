@@ -6,206 +6,8 @@
     <meta name="description" content="Portfolio of Caio Guidino - IT Professional">
     <title>Caio Guidino Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Estilo para o corpo e a fonte */
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Estilo para o cabeçalho */
-        header {
-            background-color: #333;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between; /* Título à esquerda e menu à direita */
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        header h1 {
-            color: #fff;
-        }
-
-        /* Menu Hambúrguer */
-        .hamburger-icon {
-            display: none;
-            cursor: pointer;
-            z-index: 1000;
-        }
-
-        .hamburger-icon .bar {
-            width: 30px;
-            height: 4px;
-            background-color: #fff;
-            margin: 5px 0;
-            transition: transform 0.3s ease;
-        }
-
-        header nav ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        header nav ul li {
-            margin-left: 20px;
-        }
-
-        header nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        /* Menu Responsivo */
-        @media (max-width: 768px) {
-            .hamburger-icon {
-                display: block;
-            }
-
-            header nav {
-                position: absolute;
-                top: 0;
-                left: 0;
-                background-color: #333;
-                width: 100%;
-                height: 100vh;
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-                justify-content: center;
-                align-items: center;
-            }
-
-            header nav.active {
-                transform: translateX(0);
-            }
-
-            header nav ul {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-
-            header nav ul li {
-                margin-left: 0;
-            }
-
-            header nav ul li a {
-                font-size: 24px;
-                color: #fff;
-            }
-        }
-
-        /* Scroll da página */
-        main {
-            margin-top: 80px; /* Deixa o conteúdo da página abaixo do menu fixo */
-            padding: 20px;
-        }
-
-        /* Estilos para as seções */
-        .skills-container, .recommendations-container {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-
-        .skills-list, .recommendations-cards {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skills-list li, .recommendation-card {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            flex: 1;
-            min-width: 150px;
-        }
-
-        /* Animação para fade-in */
-        section.hidden {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Formulário de Contato */
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        form button {
-            background: #28a745;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-
-        form button:hover {
-            background: #218838;
-        }
-
-        /* Rodapé */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-
-        .social-media a {
-            color: #ffeb3b;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 18px;
-        }
-
-        .social-media a:hover {
-            text-decoration: underline;
-        }
-
-    </style>
 </head>
 <body>
     <header>
@@ -216,7 +18,7 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-            <nav id="menu">
+            <nav id="menu" class="menu">
                 <ul>
                     <li><a href="#profile">Profile</a></li>
                     <li><a href="#experience">Experience</a></li>
@@ -230,12 +32,10 @@
     <main>
         <!-- Profile -->
         <section id="profile" class="hidden">
-            <div class="container profile-container">
+            <div class="container">
                 <div class="profile-info">
                     <h2>Profile</h2>
-                    <p>I am Caio Guidino da Silva, an IT professional based in São Paulo, Brazil. I specialize in end-user support, structured cabling, and Cisco device configurations. I am passionate about solving technical problems and helping businesses optimize their IT infrastructure.
-
-                        I have hands-on experience working with a variety of network environments and I am always looking to expand my knowledge. My focus is on providing quality technical support and ensuring that networks and systems operate smoothly.</p>
+                    <p>I am Caio Guidino da Silva, an IT professional based in São Paulo, Brazil. I specialize in end-user support, structured cabling, and Cisco device configurations. I am passionate about solving technical problems and helping businesses optimize their IT infrastructure.</p>
                 </div>
             </div>
         </section>
@@ -244,16 +44,16 @@
         <section id="experience" class="hidden">
             <div class="container">
                 <h2 class="section-title">Experience</h2>
-                <div class="experience-cards">
-                    <div class="experience-card">
+                <div class="experiencia-cards">
+                    <div class="experiencia-card">
                         <h3>Support Technician N1 and N2.</h3>
                         <p><i class="fas fa-calendar-day"></i> Nov 24 - Present</p>
-                        <p>I work as a Support Technician N1 and N2, at the company Progroup Tecnologia e comércio LTDA, I provide technical assistance for end users, troubleshoot hardware and software issues, and ensure smooth network operations. I handle incident resolution, system configurations, and escalate complex problems when needed. My goal is to deliver efficient and reliable IT support, minimizing downtime and improving user experience.</p>
+                        <p>I provide technical assistance for end users, troubleshoot hardware and software issues, and ensure smooth network operations.</p>
                     </div>
-                    <div class="experience-card">
+                    <div class="experiencia-card">
                         <h3>Structured Cabling</h3>
                         <p><i class="fas fa-calendar-day"></i> Jun 24 - Jul 24</p>
-                        <p>At Senai Roberto Simonsen, a project was carried out to repair 16 network points. The work involved crimping both male and female cable ends, reorganizing the patch panel, and properly structuring ISP cables. Sufficient cable length was left for future maintenance, ensuring a well-organized, efficient, and optimized installation for easy future interventions.</p>
+                        <p>Project to repair 16 network points, crimping cables, reorganizing patch panels, and structuring ISP cables for future maintenance.</p>
                     </div>
                 </div>
             </div>
@@ -261,9 +61,9 @@
 
         <!-- Skills -->
         <section id="skills" class="hidden">
-            <div class="container skills-container">
+            <div class="container">
                 <h2 class="section-title">Skills</h2>
-                <ul class="skills-list">
+                <ul class="habilidades-lista">
                     <li>Computer Networks</li>
                     <li>Cybersecurity</li>
                     <li>Technical Support</li>
@@ -291,9 +91,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Função para alternar o menu hambúrguer
         function toggleMenu() {
             const menu = document.getElementById('menu');
             const hamburgerIcon = document.getElementById('hamburger-icon');
@@ -301,10 +99,8 @@
             hamburgerIcon.classList.toggle('active');
         }
 
-        // Adicionando o evento de clique no ícone do menu
         document.getElementById('hamburger-icon').addEventListener('click', toggleMenu);
 
-        // Função para adicionar animação nas seções
         function aplicarAnimacaoSeccao() {
             const sections = document.querySelectorAll("section");
 
@@ -321,12 +117,10 @@
             sections.forEach(section => observer.observe(section));
         }
 
-        // Função para inicializar tudo
         function init() {
             aplicarAnimacaoSeccao();
         }
 
-        // Iniciar o script
         init();
     </script>
 </body>
